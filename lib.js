@@ -51,6 +51,12 @@ function validatePositiveInteger(s) {
 }
 exports.validatePositiveInteger = validatePositiveInteger
 
+function formatArticleSlug(title) {
+  if (!title) return ''
+  return String(title).toLowerCase().trim().replace(/\s+/g, '-')
+}
+exports.formatArticleSlug = formatArticleSlug
+
 function validateParam(obj, prop, validator, defaultValue) {
   let param = obj[prop]
   if (typeof param === 'undefined') {
